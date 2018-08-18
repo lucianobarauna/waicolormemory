@@ -1,4 +1,5 @@
 # wai-colormemory
+A simple memory game with colors that a visually impaired player can play
 
 ## Project setup
 ```
