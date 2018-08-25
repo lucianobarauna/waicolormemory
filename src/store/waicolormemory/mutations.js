@@ -1,6 +1,6 @@
 const mutations = {
-  SET_SQUARES (state, squares) {
-    state.squares = squares
+  SET_CARDS (state, cards) {
+    state.cards = cards
   }
 }
 

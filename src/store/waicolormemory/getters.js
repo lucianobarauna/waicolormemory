@@ -1,6 +1,6 @@
 const getters = {
-  getSquares (state) {
-    return state.squares
+  getCards (state) {
+    return state.cards
   }
 }
 

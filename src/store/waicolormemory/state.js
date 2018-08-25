@@ -1,5 +1,5 @@
 const state = {
-  squares: []
+  cards: []
 }
 
 export default state
