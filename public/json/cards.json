@@ -1,5 +1,6 @@
 {
-	"cards": [{
+	"cards": [
+    {
 			"color": "#ff0000",
 			"name": "cinza"
 		},
@@ -29,6 +30,22 @@
 		},
 		{
 			"color": "#16a8d6",
+			"name": "cinza"
+    },
+    {
+			"color": "#16a8d6",
+			"name": "cinza"
+    },
+    {
+			"color": "#16a8d6",
+			"name": "cinza"
+		},
+		{
+			"color": "#ffff00",
+			"name": "cinza"
+		},
+		{
+			"color": "#ff00ff",
 			"name": "cinza"
 		}
 	]
