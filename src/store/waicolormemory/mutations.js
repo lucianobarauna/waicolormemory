@@ -1,5 +1,5 @@
 const mutations = {
-  setSquares (state, squares) {
+  SET_SQUARES (state, squares) {
     state.squares = squares
   }
 }

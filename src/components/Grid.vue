@@ -9,11 +9,16 @@
     //-   :selected="isSelected(index)",
     //-   :opened="isOpened(index)"
     //- )
-    p {{squares}}
+    Square(
+      v-for="(square, index) in getSquares",
+      :key="index",
+      :color="square.color",
+      :name="square.name",
+    )
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import Square from './Square'
 
 export default {
@@ -21,15 +26,13 @@ export default {
     Square
   },
   computed: {
-    ...mapState('waicolormemory', {
-      squares: state => state.squares
-    })
+    ...mapGetters('waicolormemory', ['getSquares'])
   },
   methods: {
-    ...mapActions('waicolormemory', ['loadCards'])
+    ...mapActions('waicolormemory', ['fecthCards'])
   },
   created () {
-    this.loadCards()
+    this.fecthCards()
   }
 
 }

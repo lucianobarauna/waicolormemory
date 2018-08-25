@@ -1,6 +1,9 @@
 <template lang="pug">
+  //- .square(
+  //-   :class="[getOpened, getSelected]"
+  //-   :style="{ backgroundColor: color }"
+  //- )
   .square(
-    :class="[getOpened, getSelected]"
     :style="{ backgroundColor: color }"
   )
     span {{name}}
@@ -10,45 +13,45 @@
 export default {
   props: {
     color: {
-      type: String,
-      required: true,
-      default () {
-        return '#000000'
-      }
+      // type: String,
+      // required: true,
+      // default () {
+      //   return '#000000'
+      // }
     },
     name: {
-      type: String,
-      required: true,
-      default () {
-        return 'preto'
-      }
+      // type: String,
+      // required: true,
+      // default () {
+      //   return 'preto'
+      // }
     },
     selected: {
-      type: Boolean,
-      required: true,
-      default () {
-        return false
-      }
+      // type: Boolean,
+      // required: true,
+      // default () {
+      //   return false
+      // }
     },
     opened: {
-      type: Boolean,
-      required: true,
-      default () {
-        return false
-      }
+      // type: Boolean,
+      // required: true,
+      // default () {
+      //   return false
+      // }
     }
   },
   computed: {
-    getSelected () {
-      if (this.selected) {
-        return 'selected'
-      }
-    },
-    getOpened () {
-      if (this.opened) {
-        return 'opened'
-      }
-    }
+    // getSelected () {
+    //   if (this.selected) {
+    //     return 'selected'
+    //   }
+    // },
+    // getOpened () {
+    //   if (this.opened) {
+    //     return 'opened'
+    //   }
+    // }
   }
 }
 </script>
