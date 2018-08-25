@@ -10,7 +10,7 @@
     //-   :opened="isOpened(index)"
     //- )
     Square(
-      v-for="(square, index) in getSquares",
+      v-for="(square, index) in getCards",
       :key="index",
       :color="square.color",
       :name="square.name",
@@ -26,7 +26,7 @@ export default {
     Square
   },
   computed: {
-    ...mapGetters('waicolormemory', ['getSquares'])
+    ...mapGetters('waicolormemory', ['getCards'])
   },
   methods: {
     ...mapActions('waicolormemory', ['fecthCards'])
@@ -42,9 +42,11 @@ export default {
 @import ../assets/sass/import/_extend
 
 .grid
-  +flex(row, w, flex-start, flex-start)
+  +flex(row, w, center, flex-start)
   margin-right: auto
   margin-left: auto
-  width: $pixel * 40
-  height: $pixel * 40
+  width: 100%
+  perspective: 1000px
+  +media-min(620px)
+    width: $pixel * 59
 </style>

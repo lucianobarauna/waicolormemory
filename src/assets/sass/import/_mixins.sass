@@ -16,3 +16,11 @@
   justify-content: $justifyFlex !important
   align-content: $alignFlex !important
   align-items: $alignFlex !important
+
+=media-min($width)
+  @media (min-width: $width)
+    @content
+
+=media-max($width)
+  @media (max-width: $width)
+    @content
