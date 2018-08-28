@@ -2,12 +2,17 @@ import axios from 'axios'
 
 const actions = {
   fecthCards ({ commit }) {
-    axios.get('http://localhost:8080/json/cards.json')
-      .then(response => {
-        commit('SET_CARDS', response.data.cards)
-      }).catch(e => {
-        console.log(e)
-      })
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        axios.get('http://localhost:8080/json/cards.json')
+          .then(response => {
+            commit('SET_CARDS', response.data.cards)
+            resolve()
+          }).catch(e => {
+            console.log(e)
+          })
+      }, 1000)
+    })
   }
 }
 

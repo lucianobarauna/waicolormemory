@@ -14,6 +14,7 @@
       :key="index",
       :color="square.color",
       :name="square.name",
+      v-if="loaded"
     )
 </template>
 
@@ -22,6 +23,11 @@ import { mapGetters, mapActions } from 'vuex'
 import Square from './Square'
 
 export default {
+  data () {
+    return {
+      loaded: false
+    }
+  },
   components: {
     Square
   },
@@ -32,7 +38,11 @@ export default {
     ...mapActions('waicolormemory', ['fecthCards'])
   },
   created () {
-    this.fecthCards()
+    this.$store.dispatch('waicolormemory/fecthCards').then(() => {
+      console.log('foi')
+      
+      this.loaded = true
+    })
   }
 
 }
