@@ -40,7 +40,6 @@ export default {
   created () {
     this.$store.dispatch('waicolormemory/fecthCards').then(() => {
       console.log('foi')
-      
       this.loaded = true
     })
   }

@@ -4,11 +4,12 @@
   //-   :style="{ backgroundColor: color }"
   //- )
   .card
-    .card-front Frente
+    .card-front
       //- span {{name}}
     .card-back(
       :style="{ backgroundColor: color }"
-    ) verso
+    )
+     span.card-name verso
 
 </template>
 
@@ -63,6 +64,7 @@ export default {
 @import ../assets/sass/import/_extend
 .card
   position: relative
+  margin: ($pixel * 2) $pixel
   width: $vw * 4
   height: $vw * 4
   +media-min(620px)
@@ -79,8 +81,9 @@ export default {
     width: 100%
     height: 100%
     border-radius: $pixel
-    backface-visibility: hidden
-    border: solid ($pixel / 2) white
+    // backface-visibility: hidden
+    // border: solid ($pixel / 2) white
+    box-shadow: inset 0 0 0 ($pixel / 2) white
   &-front
     z-index: 2
     background-size: cover
@@ -95,5 +98,13 @@ export default {
     // quando ficar selecionado fazer alguma coisa aqui
   &.opened
     transform: scale(1.5)
+  &-name
+    position: absolute
+    bottom: -20px
+    +flex(row, w, center, center)
+    width: 100%
+    height: $pixel * 4
+    border-radius: 0 0 $pixel $pixel
+    background-color: white
 
 </style>
