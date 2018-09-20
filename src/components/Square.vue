@@ -3,7 +3,7 @@
   //-   :class="[getOpened, getSelected]"
   //-   :style="{ backgroundColor: color }"
   //- )
-  .card
+  a.card
     .card-front
       //- span {{name}}
     .card-back(
@@ -81,7 +81,7 @@ export default {
     width: 100%
     height: 100%
     border-radius: $pixel
-    // backface-visibility: hidden
+    backface-visibility: hidden
     // border: solid ($pixel / 2) white
     box-shadow: inset 0 0 0 ($pixel / 2) white
   &-front
