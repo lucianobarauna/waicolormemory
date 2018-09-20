@@ -1,15 +1,14 @@
 <template lang="pug">
-  //- .square(
+  //- .square(0,,
   //-   :class="[getOpened, getSelected]"
   //-   :style="{ backgroundColor: color }"
   //- )
-  a.card
+  .card
     .card-front
-      //- span {{name}}
     .card-back(
       :style="{ backgroundColor: color }"
     )
-     span.card-name verso
+     span.card-name {{name}}
 
 </template>
 
@@ -17,18 +16,15 @@
 export default {
   props: {
     color: {
-      // type: String,
-      // required: true,
-      // default () {
-      //   return '#000000'
-      // }
+      type: String,
+      required: true,
+      default () {
+        return '#000000'
+      }
     },
     name: {
-      // type: String,
-      // required: true,
-      // default () {
-      //   return 'preto'
-      // }
+      type: String,
+      required: true
     },
     selected: {
       // type: Boolean,
@@ -62,6 +58,15 @@ export default {
 
 <style lang="sass" scoped>
 @import ../assets/sass/import/_extend
+
+%flap-card
+  position: absolute
+  bottom: -20px
+  width: 100%
+  height: $pixel * 4
+  border-radius: 0 0 $pixel $pixel
+  background-color: white
+
 .card
   position: relative
   margin: ($pixel * 2) $pixel
@@ -82,7 +87,6 @@ export default {
     height: 100%
     border-radius: $pixel
     backface-visibility: hidden
-    // // border: solid ($pixel / 2) white
     box-shadow: inset 0 0 0 ($pixel / 2) white
   &-front
     z-index: 2
@@ -91,11 +95,7 @@ export default {
     transform: rotateY(0deg)
     &::after
       content: ''
-      position: absolute
-      bottom: -20px
-      width: 100%
-      height: $pixel * 4
-      background-color: red
+      @extend %flap-card
   &-back
     transform: rotateY(180deg)
   &:hover,
@@ -106,12 +106,7 @@ export default {
   &.opened
     transform: scale(1.5)
   &-name
-    position: absolute
-    bottom: -20px
+    @extend %flap-card
     +flex(row, w, center, center)
-    width: 100%
-    height: $pixel * 4
-    border-radius: 0 0 $pixel $pixel
-    background-color: white
 
 </style>

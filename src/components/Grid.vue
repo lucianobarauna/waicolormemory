@@ -1,7 +1,6 @@
 <template lang="pug">
   //- @click.native é um evento que só vive dentro do grid e não é passado para square
   section.grid
-    a(href="opa") Opa
     //- Square(
     //-   v-for="(square, index) in squares",
     //-   :key="index",
