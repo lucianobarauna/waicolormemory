@@ -23,30 +23,6 @@
 		{
 			"color": "#babaca",
 			"name": "Cinza"
-		},
-		{
-			"color": "#064a0b",
-			"name": "Verde escuro"
-		},
-		{
-			"color": "#16a8d6",
-			"name": "Azul"
-    },
-    {
-			"color": "#16a8d6",
-			"name": "Azul"
-    },
-    {
-			"color": "#16a8d6",
-			"name": "Azul"
-		},
-		{
-			"color": "#ffff00",
-			"name": "Amarelo"
-		},
-		{
-			"color": "#ff00ff",
-			"name": "Rosa"
 		}
 	]
 }

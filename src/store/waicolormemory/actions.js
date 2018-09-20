@@ -6,11 +6,10 @@ const actions = {
       setTimeout(() => {
         axios.get('http://localhost:8080/json/cards.json')
           .then(response => {
-            var cards = response.data.cards
-            var randomCards = cards[3]
-            // console.log(cards)
-            console.log('randomCards', randomCards)
-            commit('SET_CARDS', cards)
+            // Duplicated itens
+            let cards = [...response.data.cards, ...response.data.cards]
+            let shuffleCards = cards.sort(() => 0.5 - Math.random())
+            commit('SET_CARDS', shuffleCards)
             resolve()
           }).catch(e => {
             console.log(e)
