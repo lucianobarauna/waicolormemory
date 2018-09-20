@@ -82,13 +82,20 @@ export default {
     height: 100%
     border-radius: $pixel
     backface-visibility: hidden
-    // border: solid ($pixel / 2) white
+    // // border: solid ($pixel / 2) white
     box-shadow: inset 0 0 0 ($pixel / 2) white
   &-front
     z-index: 2
     background-size: cover
     background-image: url('../assets/img/flat-mountains.svg')
     transform: rotateY(0deg)
+    &::after
+      content: ''
+      position: absolute
+      bottom: -20px
+      width: 100%
+      height: $pixel * 4
+      background-color: red
   &-back
     transform: rotateY(180deg)
   &:hover,
